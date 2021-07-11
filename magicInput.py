@@ -2,12 +2,6 @@ import time, cv2, mediapipe
 from trackingModule import handDetector
 import math
 
-#fist, L, ok, surfer dude (positions)
-#swpie left, swipe right (movement) (choose between different control states)
-#Different gestures to go to volume, input, and cursor control
-#All in one document, with an open gesture and close gesture (and sleep after 2 minutes)
-
-
 tipIDs = [4, 8, 12, 16, 20]
 
 def main():

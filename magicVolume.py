@@ -77,8 +77,3 @@ def main():
         cv2.waitKey(1)
 
 main()
-
-#v = volumeControl()
-#print(v.getVolume())
-#print(v.getRange()[2])
-#v.setVolume(-62.98)
