@@ -2,8 +2,13 @@ import time, cv2, mediapipe
 from trackingModule import handDetector
 import math
 
+#fist, L, ok, surfer dude (positions)
+#swpie left, swipe right (movement) (choose between different control states)
+#Different gestures to go to volume, input, and cursor control
+#All in one document, with an open gesture and close gesture (and sleep after 2 minutes)
+
+
 tipIDs = [4, 8, 12, 16, 20]
-input = []
 
 def main():
     pTime = 0
@@ -28,22 +33,20 @@ def main():
                 else:
                     fingers.append(0)
             total = fingers.count(1)
-            #print(total)
-        
+
+        print(total)
+
         cTime = time.time()
         fps = 1/(cTime-pTime)
         pTime = cTime
 
-        cv2.putText(img2, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_COMPLEX, 3, (255, 0, 255), 3)
+        cv2.putText(img2, f"FPS: {str(int(fps))}", (15, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 182, 18), 1)
+        cv2.putText(img2, f"Input: {str(total)}", (15, 130), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 182, 18), 1)
 
         cv2.imshow("Image", img2)
         cv2.waitKey(1)
-
-        input.append(total)
 
         total = 0
         fingers = []
 
 main()
-
-print(input)
