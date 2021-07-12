@@ -2,8 +2,6 @@
 
 **HOV5R**: The future of kiosks. A revolutionary technology to improve public health in commercial settings.
 
-A description of the project (purpose, how to use the app, technoogies used, etc.) can be found on Devpost at: [FIll IN]
-
 **Downloading the executable**
 
 Requirement: Windows 10
