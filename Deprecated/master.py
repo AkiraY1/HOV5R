@@ -2,6 +2,7 @@ import time, cv2, mediapipe
 from trackingModule import handDetector
 import math, pyautogui
 from volumeControl import volumeControl
+from settings import inputt, voll
 
 #Finger tip IDs
 tipIDs = [4, 8, 12, 16, 20]
@@ -176,7 +177,7 @@ def cursor():
 
             #CursorMove
             x, y = lmList[8][1], lmList[8][2]
-            xp, yp = ((640-x)/640), (y/400)-0.1
+            xp, yp = ((640-x)/500), (y/250)
             x0, y0 = (xp*1920), (yp*1080)
             x1, y1 = lmList[12][1], lmList[12][2]
             distance = math.hypot(x - x1, y - y1)
@@ -278,5 +279,3 @@ def sleep():
 
         total = 0
         fingers = []
-
-sleep()
