@@ -1,8 +1,6 @@
 import tkinter
 import sys
 
-#Credit to @TomSchimansky
-
 class TkinterCustomButton(tkinter.Frame):
     """ tkinter custom button with border, rounded corners and hover effect
         Arguments:  master= where to place button
