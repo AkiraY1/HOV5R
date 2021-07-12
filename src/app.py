@@ -6,7 +6,6 @@ import time, cv2, mediapipe
 from trackingModule import handDetector
 import math, pyautogui
 from volumeControl import volumeControl
-from settings import inputt, voll
 
 #----------------------------------------------------------------------------------------------------------------------------------------
 #Finger tip IDs
@@ -30,8 +29,7 @@ def fingerCount(fingers, lmList):
 def input():
     state_display.configure(text = "Input")
     state_display.update()
-    pTime = 0
-    cTime = 0
+
     cap = cv2.VideoCapture(0)
 
     fingers = []
@@ -69,15 +67,6 @@ def input():
                     sleep()
             else:
                 endList.append(0)
-
-        #Screen
-        cTime = time.time()
-        fps = 1/(cTime-pTime)
-        pTime = cTime
-        cv2.putText(img2, f"FPS: {str(int(fps))}", (15, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 182, 18), 1)
-        cv2.putText(img2, f"Input: {str(total)}", (15, 130), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 182, 18), 1)
-        cv2.putText(img2, "Input", (500, 50), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 182, 18), 1)
-        cv2.imshow("Image", img2)
         cv2.waitKey(1)
 
         total = 0
@@ -87,8 +76,7 @@ def input():
 def vvol():
     state_display.configure(text = "Volume")
     state_display.update()
-    pTime = 0
-    cTime = 0
+
     cap = cv2.VideoCapture(0)
     v = volumeControl()
     prev_distance = 100
@@ -148,15 +136,6 @@ def vvol():
                     sleep()
             else:
                 endList.append(0)
-        
-        #Screen
-        cTime = time.time()
-        fps = 1/(cTime-pTime)
-        pTime = cTime
-        cv2.putText(img2, f"FPS: {str(int(fps))}", (15, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 182, 18), 1)
-        cv2.putText(img2, f"Input: {str(total)}", (15, 130), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 182, 18), 1)
-        cv2.putText(img2, "Volume", (500, 50), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 182, 18), 1)
-        cv2.imshow("Image", img2)
         cv2.waitKey(1)
 
         total = 0
@@ -166,8 +145,7 @@ def vvol():
 def cursor():
     state_display.configure(text = "Cursor")
     state_display.update()
-    pTime = 0
-    cTime = 0
+
     cap = cv2.VideoCapture(0)
 
     fingers = []
@@ -225,15 +203,6 @@ def cursor():
                     sleep()
             else:
                 endList.append(0)
-
-        #Screen
-        cTime = time.time()
-        fps = 1/(cTime-pTime)
-        pTime = cTime
-        cv2.putText(img2, f"FPS: {str(int(fps))}", (15, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 182, 18), 1)
-        cv2.putText(img2, f"Input: {str(total)}", (15, 130), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 182, 18), 1)
-        cv2.putText(img2, "Cursor", (500, 50), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 182, 18), 1)
-        cv2.imshow("Image", img2)
         cv2.waitKey(1)
 
         total = 0
@@ -243,8 +212,7 @@ def cursor():
 def sleep():
     state_display.configure(text = "Sleep")
     state_display.update()
-    pTime = 0
-    cTime = 0
+
     cap = cv2.VideoCapture(0)
 
     fingers = []
@@ -281,15 +249,6 @@ def sleep():
                     break
             else:
                 endList.append(0)
-
-        #Screen
-        cTime = time.time()
-        fps = 1/(cTime-pTime)
-        pTime = cTime
-        cv2.putText(img2, f"FPS: {str(int(fps))}", (15, 50), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 182, 18), 1)
-        cv2.putText(img2, f"Input: {str(total)}", (15, 130), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 182, 18), 1)
-        cv2.putText(img2, "Sleeping", (500, 50), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 182, 18), 1)
-        cv2.imshow("Image", img2)
         cv2.waitKey(1)
 
         total = 0

@@ -2,7 +2,6 @@ import time, cv2, mediapipe
 from trackingModule import handDetector
 import math, pyautogui
 from volumeControl import volumeControl
-from settings import inputt, voll
 
 #Finger tip IDs
 tipIDs = [4, 8, 12, 16, 20]
